@@ -1,9 +1,28 @@
+body {
+    background: #631616;
+}
+
+@font-face {
+    font-family: 'Covidfont';
+    src: url('./fonts/CFLCD-Regular.ttf') format('truetype');
+}
+
 h1 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Covidfont, Arial, Helvetica, sans-serif;
     font-size: 36px;
     font-weight: bold;
+    color: #f00;
+    background: #631616;
+    text-align: center;
+    text-shadow: 4px 4px #4a0707;
+    text-transform: uppercase;
 }
 
 #load-button {
     display: none;
+}
+
+#chartDiv {
+    overflow-x: hidden;
+    overflow-y: auto;
 }

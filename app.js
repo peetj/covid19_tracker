@@ -84,17 +84,90 @@ function appendToTheDaysSnapshot(data) {
 function renderGraph() {
     __chart = JSC.Chart("chartDiv", {
         debug: false,
+        title_label_style: {
+            color: '#ffffff',
+            fontWeight: 'bold',
+            fontSize: '18px',
+            fontFamily: 'Covidfont'
+        },
         defaultPoint_tooltip: '<b>%name: %seriesName</b><br/>+%Value new cases',
         type: 'horizontal column',
-        palette: 'fiveColor7',
+        legend: {
+            position: 'right top',
+            fill: '#f1f8ff',
+            boxVisible: true,
+            corners: 'round',
+            radius: 5,
+            margin_left: 10,
+            outline: {
+                color: '#a5c6ee',
+                width: 3
+            },
+            defaultEntry: {
+                iconWidth: 25,
+                padding: 4,
+                style: {
+                    color: '#3A5254',
+                    fontSize: '10pt',
+                    fontStyle: 'italic',
+                    fontFamily: 'Arial',
+                    fontWeight: 'normal'
+                },
+                states: {
+                    hover_style: {
+                        color: '#FF5254'
+                    },
+                    hidden_style: {
+                        color: '#c2bec1'
+                    }
+                }
+            }
+        },
+        palette: ['#9fa8da', '#f48fb1', '#ffab91', '#ffe082', '#c5e1a5', '#80cbc4', '#81d4fa'],
         yAxis: {
             scale_type: 'stacked',
-            label_text: 'Daily Cases'
+            label_text: 'Daily Cases',
+            label_style: {
+                color: '#fefefe',
+                fontFamily: 'Covidfont',
+                fontSize: '19px'
+            },
+            defaultTick: {
+                label_style: {
+                    color: '#ffffff',
+                }
+            },
+        },
+        box: {
+            padding: 10,
+            outline: {
+                color: '#FF0000',
+                width: 4
+            },
+            radius: 5,
+            fill: '#631616'
+        },
+        xAxis: {
+            label_text: 'Countries',
+            label_style: {
+                color: '#fefefe',
+                fontFamily: 'Covidfont',
+                fontSize: '19px'
+            },
+            defaultTick: {
+                label_style: {
+                    color: '#ffffff',
+                    fontFamily: 'Covidfont',
+                    fontSize: '8px'
+                }
+            },
         },
         defaultPoint_outline_color: 'darkenMore',
-        title_label_text: 'COVID-19 Daily Cases by country',
-        xAxis_label_text: 'Countries',
+        title_label_text: 'Corona Virus Daily Cases by Country',
         series: seriesData,
+        chartArea: {
+            fill: 'black'
+        }
     });
 }
 
